@@ -205,6 +205,14 @@ const restaurantData = [
       phone: '+598 98 116 354',
       openingHours: 'Lunes a Viernes: 9:00 - 22:00, Sábado y Domingo: 10:00 - 23:00'
     } },
+    { key: 'show5', 
+    image: require('../assets/show5.png'), 
+    text: 'Show 5', 
+    details: {
+      location: 'Av. Pedragosa Sierra',
+      phone: '+598 98 116 354',
+      openingHours: 'Lunes a Viernes: 9:00 - 22:00, Sábado y Domingo: 10:00 - 23:00'
+    } }
   ];
   
   export { restaurantData, showData };

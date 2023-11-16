@@ -11,6 +11,7 @@ import DetailScreen from './components/DetailScreen';
 import { KeyboardAvoidingView, Platform } from 'react-native';
 import StoreProvider from './store/StoreProvider'; // Importa StoreProvider
 import AllShowsScreen from './components/AllShows';
+import MyShowCarousel from './components/showCarousel';
 
 // CONTEXT PARA MANTENER EL ESTADO GLOBAL DE LA APLICACION
 // REDUCER PARA ACTUALIZAR EL ESTADO GLOBAL DE LA APLICACION (SE LE PASA COMO PARAMETRO EL ESTADO GLOBAL Y LA ACTION)
@@ -84,7 +85,7 @@ export default function App() {
                 {/* Título de la sección de shows */}
                 <Text style={styles.title}>Shows</Text>
                 {/* Carrusel para los shows */}
-                <MyCarousel type='shows' navigation={navigation} />
+                <MyShowCarousel type='shows' navigation={navigation} />
                 {/* Para que se adapte al celular */}
                 <StatusBar style="auto" />
               </View>
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 20, // Agrega un margen a la izquierda para separar el título del borde de la pantalla
-    paddingTop: 40, // Ajusta el margen superior del título
+    paddingTop: 25, // Ajusta el margen superior del título
   },
   // ESTILO PARA EL TITULO PRINCIPAL (INICIO)
   mainTitle: {
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
     //marginTop: 20, // Para separarla del titulo
     //marginRight: 190, // Para que  quede alineada con el título (en la izquierda)
     height: 90, // Tamaño de la imagen
-    width: 150, // Tamaño de la imagen
+    width: 160, // Tamaño de la imagen
      // Para que se adapte unicamente al tamaño que le dijimos
     resizeMode: 'contain',
   },
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     //marginTop: 20, // Para separarla del titulo
     //marginRight: 190, // Para que  quede alineada con el título (en la izquierda)
     height: 90, // Tamaño de la imagen
-    width: 150, // Tamaño de la imagen
+    width: 160, // Tamaño de la imagen
     marginLeft: 20,
      // Para que se adapte unicamente al tamaño que le dijimos
     resizeMode: 'contain',
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
     //marginTop: 20, // Para separarla del titulo
     //marginRight: 190, // Para que  quede alineada con el título (en la izquierda)
     height: 90, // Tamaño de la imagen
-    width: 320, // Tamaño de la imagen
+    width: 340, // Tamaño de la imagen
      // Para que se adapte unicamente al tamaño que le dijimos
     resizeMode: 'contain',
   },

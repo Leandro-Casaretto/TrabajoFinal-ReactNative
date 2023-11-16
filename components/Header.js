@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 /*ENCABEZADO DE LA PANTALLA PRINCIPAL*/
 
@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerText}>GuiaRest</Text>
+      <Image source={require('../assets/logo.png')} style={styles.logo} />
     </View>
   );
 };
@@ -30,6 +31,16 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     paddingTop: 30,
+  },
+  // EL LOGO DEL ENCABEZADO
+  logo: {
+    position: 'absolute',
+    width: 45,
+    height: 45,
+    top: 35,
+    left: 325,
+    zIndex: 1,
+    borderRadius: 10,
   },
 });
 

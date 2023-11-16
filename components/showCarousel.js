@@ -7,13 +7,14 @@ import { useContext } from 'react'; // Importamos useContext
 
 /* COMPONENTE DEL CARRUSEL. YA NO RECIBIMOS LOS DATOS COMO PROP, SINO EL TIPO (RESTAURANTE O SHOW)*/
 
-const MyCarousel = ({ navigation, type }) => {
+const MyShowCarousel = ({ navigation, type }) => {
   // Usamos useContext para acceder al store (el estado global)
   const [store] = useContext(storeContext); 
-  let data = store.restaurants;
+  let data = store.shows;
+    
 
-  
   const renderItem = ({ item }) => (
+    
     <TouchableOpacity onPress={() => navigation.navigate('Details', { item })}>
       <View style={styles.restaurantContainer}>
         <Image source={item.image} style={styles.image} />
@@ -27,7 +28,7 @@ const MyCarousel = ({ navigation, type }) => {
       data={data}
       renderItem={renderItem}
       sliderWidth={400}
-      itemWidth={180}
+      itemWidth={160}
       itemHeight={150}
       layout={'default'}
       containerCustomStyle={styles.carouselMargin}
@@ -49,10 +50,10 @@ const styles = StyleSheet.create({
       marginVertical: 10,
     },
     image: {
-      width: 180,
-      height: 110,
+      width: 150,
+      height: 250,
       borderRadius: 10,
     }
 });
 
-export default MyCarousel;
+export default MyShowCarousel;
