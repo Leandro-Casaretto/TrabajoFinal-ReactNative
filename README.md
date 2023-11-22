@@ -11,7 +11,7 @@
 2. [Requerimientos a desarrollar](#requerimientos-a-desarrollar)
 3. [Ejecución del proyecto](#ejecución-del-proyecto)
 4. [Componentes](#componentes)
-5. [App.js](#app.js)
+5. [App.js](#appjs)
 6. [Store](#store)
 
 ## Descripción
