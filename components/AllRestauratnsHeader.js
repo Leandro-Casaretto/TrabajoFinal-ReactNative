@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 /* ENCABEZADO DE LA PANTALLA DE TODOS LOS RESTAURANTES (IGUAL QUE EL DE homeScreen)*/
-
 const AllRestaurantsHeader = () => {
   return (
     <View style={styles.header}>
@@ -13,7 +12,7 @@ const AllRestaurantsHeader = () => {
 
 // DEFINIMOS LOS ESTILOS
 const styles = StyleSheet.create({
-  // BLOQUE DEL ENCABEZADO
+  // Bloque del encabezado
   header: {
     backgroundColor: '#EE2D43',
     alignItems: 'center',
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 
-  // TEXTO DEL ENCABEZADO
+  // Texto
   headerText: {
     fontSize: 24,
     color: 'white',

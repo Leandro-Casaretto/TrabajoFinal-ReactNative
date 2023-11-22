@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import MyCarousel from './Carousel';
-import { AntDesign } from '@expo/vector-icons';
-import { CaretDownFilled } from '@ant-design/icons'
+import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native';
 
-/*PANTALLA DE DETALLES DE LOS RESTAURANTES Y SHOWS (PENDIENTE: PASARLE LOS DETALLES DE CADA RESTAURANTE)*/
+/*PANTALLA DE DETALLES DE LOS RESTAURANTES*/
 
-const DetailScreen = ({ route, navigation }) => {
+const RestaurantDetail = ({ route }) => {
+  // Obtenemos los datos del restaurante (no hace falta volver a usar el useContext porque ya tenemos los datos)
   const { item } = route.params;
   const { location, phone, openingHours } = item.details;
 
@@ -21,13 +19,14 @@ const DetailScreen = ({ route, navigation }) => {
           <Image source={item.image} style={styles.logo} />
           <Text style={styles.text}>{item.text}</Text>
 
-          <View style={styles.lupa2}>
-              <TouchableOpacity onPress={() => {navigation.navigate('AllRestaurants');}}>
-                <AntDesign name="search1" size={24} color="black" />
-              </TouchableOpacity>  
-          </View>
-          
+          {/* Icono de info */}
+          <View style={styles.infoIcon}>
+              <Image source={require('../assets/info.png')} style={{ width: 23, height: 23}} />
+          </View> 
+
         </View>
+
+        {/* Detalles */}
         <Text style={{ fontSize: 22, fontWeight: 'bold',  fontFamily: 'Avenir-Medium', paddingTop:40, paddingLeft:20 }}>Detalles</Text>
         {/* Le agregamos los datos (ubicacion, telefono, etc) */}
         <View style={styles.detailsContainer}>
@@ -46,6 +45,7 @@ const DetailScreen = ({ route, navigation }) => {
   );
 };
 
+// DEFINIMOS LOS ESTILOS
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -81,58 +81,22 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     backgroundColor: '#EE2D43',
   },
-  menuContainer: {
-    marginTop: 15,
-    marginLeft: 20,
-    marginRight: 20,
-    borderRadius: 15,
-    padding: 20,
-    paddingTop: 20,
-    backgroundColor: '#ffe1e4',
-  },
-  menuText: {
-    color: 'EE2D43',
-    fontSize: 16,
-    marginLeft: 10,
-  },
-  menuTitle: {
-    color: 'black',
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 10,
-  },
   detailTitle: {
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 7,
   },
   detailText: {
     color: 'white',
     fontSize: 16,
     marginLeft: 10,
   },
-  lupa: {
-    position: 'absolute',
-    top: 48,
-    left: 290,
-    zIndex: 1,
-    borderRadius: 10,
-  },
-  lupa2: {
+  infoIcon: {
     position: 'absolute',
     top: 48,
     left: 320,
-    zIndex: 1,
-    borderRadius: 10,
   },
-  lupa3: {
-    position: 'absolute',
-    top: 48,
-    left: 350,
-    zIndex: 1,
-    borderRadius: 10,
-  }
 });
 
-export default DetailScreen;
+export default RestaurantDetail;

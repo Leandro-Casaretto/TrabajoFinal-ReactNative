@@ -1,9 +1,8 @@
-// Importamos los componentes necesarios de React y React Native
 import React, { useEffect, useState } from 'react';
 import { View, TextInput, FlatList, Text, StyleSheet, TouchableOpacity  } from 'react-native';
-import { storeContext } from '../store/StoreProvider'; // Importa storeContext
-import { useContext } from 'react'; // Importa useContext
-import { AntDesign } from '@expo/vector-icons'; // Importa el icono de búsqueda desde @expo/vector-icons
+import { storeContext } from '../store/StoreProvider'; 
+import { useContext } from 'react'; 
+import { AntDesign } from '@expo/vector-icons'; 
 
 
 /* BARRA DE BUSQUEDA, A MEDIDA QUE ESCRIBIMOS NOS DA POSIBLES RESULTADOS*/
@@ -80,7 +79,7 @@ const SearchBar = ({navigation}) => {
       <View style={styles.lupa}>
       <TouchableOpacity onPress={() => {
               // Navega a la pantalla "Details" y pasa el elemento como parámetro
-              navigation.navigate('AllRestaurants');
+              navigation.navigate('AllItems');
             }}>
             <AntDesign name="search1" size={24} color="white" />
             </TouchableOpacity>
@@ -95,8 +94,8 @@ const SearchBar = ({navigation}) => {
           keyExtractor={(item) => item.key}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => {
-              // Navega a la pantalla "Details" y pasa el elemento como parámetro
-              navigation.navigate('Details', { item });
+              // Navega a la pantalla de detalles correcta basandonos en el tipo
+              navigation.navigate(item.type === 'restaurant' ? 'Restaurant' : 'Show', { item });
             }}>
               <Text style={styles.item}>{item.text}</Text>
             </TouchableOpacity>
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#EE2D43', 
     width: '100%', // Para que ocupe todo el ancho
   },
-  // LA BARRA DE BUSQUEDA
+  // La barra de búsqueda
   input: {
     marginBottom: 20,
     marginTop: 20,
@@ -127,15 +126,16 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'white', // Color de fondo del TextInput
   },
-  // LOS RESULTADOS DE LA BUSQUEDA
+  // Los resultados de la búsqueda
   item: {
     fontFamily: 'Avenir-Medium',
-    textAlign: 'center', // Centra el texto horizontalmente
-    color: 'white', // Color del texto
+    textAlign: 'center', 
+    color: 'white', 
     fontSize: 18,
     paddingBottom: 20,
     fontWeight: '600',
   },
+  
   lupa: {
     position: 'absolute',
     marginLeft: 8,

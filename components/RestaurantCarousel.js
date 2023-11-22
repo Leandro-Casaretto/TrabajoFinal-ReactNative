@@ -2,19 +2,20 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { View, Image, Text } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import { storeContext } from '../store/StoreProvider'; // Importamos storeContext
-import { useContext } from 'react'; // Importamos useContext
+import { storeContext } from '../store/StoreProvider';
+import { useContext } from 'react'; 
 
-/* COMPONENTE DEL CARRUSEL. YA NO RECIBIMOS LOS DATOS COMO PROP, SINO EL TIPO (RESTAURANTE O SHOW)*/
+/* CARRUSEL DE LOS RESTAURANTES (USAMOS UNO YA CREADO)*/
 
-const MyCarousel = ({ navigation, type }) => {
-  // Usamos useContext para acceder al store (el estado global)
+const RestaurantCarousel = ({ navigation }) => {
+  // Usamos el contexto para acceder a los datos (store)
   const [store] = useContext(storeContext); 
-  let data = store.restaurants;
+  // Extraemos los restaurantes del store
+  const { restaurants } = store;
 
-  
+  // Función para renderizar cada elemento del carrusel (con logo y nombre)
   const renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Details', { item })}>
+    <TouchableOpacity onPress={() => navigation.navigate('Restaurant', { item })}>
       <View style={styles.restaurantContainer}>
         <Image source={item.image} style={styles.image} />
         <Text style={{ fontSize: 20,  fontFamily: 'Avenir-Medium', paddingTop:20 }}>{item.text}</Text>
@@ -24,7 +25,7 @@ const MyCarousel = ({ navigation, type }) => {
 
   return (
     <Carousel
-      data={data}
+      data={restaurants}
       renderItem={renderItem}
       sliderWidth={400}
       itemWidth={180}
@@ -37,17 +38,19 @@ const MyCarousel = ({ navigation, type }) => {
 
 // DEFINIMOS LOS ESTILOS
 const styles = StyleSheet.create({
-    // ESTILO PARA AJUSTAR LOS MARGENES
+    // Para ajustar los margenes 
     carouselMargin: {
-      marginBottom: 0, // Ajusta el margen inferior entre los carruseles
-      marginTop: 10, // Ajusta el margen superior entre los carruseles
+      marginBottom: 0, 
+      marginTop: 10, 
     },
 
-    // ESTILO PARA LOS CONTENEDORES DE LOS ELEMENTOS (SHOWS, RESTAURANTES)
+    // Contenedores de los restaurantes
     restaurantContainer: {
       alignItems: 'center',
       marginVertical: 10,
     },
+    
+    // Imagenes de los restaurantes
     image: {
       width: 180,
       height: 110,
@@ -55,4 +58,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default MyCarousel;
+export default RestaurantCarousel;

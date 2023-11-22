@@ -7,15 +7,15 @@ import { useContext } from 'react'; // Importamos useContext
 
 /* COMPONENTE DEL CARRUSEL. YA NO RECIBIMOS LOS DATOS COMO PROP, SINO EL TIPO (RESTAURANTE O SHOW)*/
 
-const MyShowCarousel = ({ navigation, type }) => {
-  // Usamos useContext para acceder al store (el estado global)
+const ShowCarousel = ({ navigation }) => {
+  // Usamos el contexto para acceder a los datos (store)
   const [store] = useContext(storeContext); 
-  let data = store.shows;
+  // Extraemos los shows del store
+  const { shows } = store;
     
 
   const renderItem = ({ item }) => (
-    
-    <TouchableOpacity onPress={() => navigation.navigate('Details', { item })}>
+    <TouchableOpacity onPress={() => navigation.navigate('Show', { item })}>
       <View style={styles.restaurantContainer}>
         <Image source={item.image} style={styles.image} />
         <Text style={{ fontSize: 20,  fontFamily: 'Avenir-Medium', paddingTop:20 }}>{item.text}</Text>
@@ -25,7 +25,7 @@ const MyShowCarousel = ({ navigation, type }) => {
 
   return (
     <Carousel
-      data={data}
+      data={shows}
       renderItem={renderItem}
       sliderWidth={400}
       itemWidth={160}
@@ -38,13 +38,13 @@ const MyShowCarousel = ({ navigation, type }) => {
 
 // DEFINIMOS LOS ESTILOS
 const styles = StyleSheet.create({
-    // ESTILO PARA AJUSTAR LOS MARGENES
+    // Para ajustar los margenes
     carouselMargin: {
-      marginBottom: 0, // Ajusta el margen inferior entre los carruseles
-      marginTop: 10, // Ajusta el margen superior entre los carruseles
+      marginBottom: 0, 
+      marginTop: 10, 
     },
 
-    // ESTILO PARA LOS CONTENEDORES DE LOS ELEMENTOS (SHOWS, RESTAURANTES)
+    // Para los contenedores de los shows
     restaurantContainer: {
       alignItems: 'center',
       marginVertical: 10,
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default MyShowCarousel;
+export default ShowCarousel;

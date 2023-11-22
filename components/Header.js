@@ -15,7 +15,7 @@ const Header = () => {
 // DEFINIMOS LOS ESTILOS
 
 const styles = StyleSheet.create({
-  // EL BLOQUE DEL ENCABEZADO
+  // Bloque del encabezado
   header: {
     backgroundColor: '#EE2D43',
     alignItems: 'flex-start',
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     height: 90,
     width: '100%',
   },
-  // EL TEXTO DEL ENCABEZADO
+  // Texto
   headerText: {
     fontFamily: 'Avenir',
     fontSize: 24,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingTop: 30,
   },
-  // EL LOGO DEL ENCABEZADO
+  // Logo
   logo: {
     position: 'absolute',
     width: 45,

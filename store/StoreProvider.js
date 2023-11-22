@@ -3,12 +3,13 @@ import storeReducer, { initialStore } from "./StoreReducer";
 import React from "react";
 
 
-/* PROVIDER: PARA CREAR EL CONTEXTO Y EL PROVEEDOR DEL STORE, LO QUE SIGNIFICA 
-QUE TODOS LOS COMPONENTES QUE ESTEN DENTRO DEL PROVEEDOR VAN A TENER ACCESO AL ESTADO GLOBAL (CONTEXTO)*/
+/* PROVIDER: PARA CREAR EL CONTEXTO Y EL PROVEEDOR DEL STORE (TODOS LOS COMPONENTES QUE ESTEN DENTRO DEL PROVEEDOR 
+  VAN A TENER ACCESO AL ESTADO GLOBAL (CONTEXTO) )
+*/
 
 // Creamos el contexto
 const storeContext = createContext();
-// Con initialData nicializamos el estado global (store)
+// Con initialData inicializamos el estado global (store)
 const initialData = initialStore();
 
 // Creamos el proveedor del store. Chilidren = los que esten adentro

@@ -3,16 +3,17 @@ import { View, Text, StyleSheet } from 'react-native';
 
 /* ENCABEZADO DE LA PANTALLA DE TODOS LOS RESTAURANTES (IGUAL QUE EL DE homeScreen)*/
 
-const AllShowsHeader = () => {
+const AllItemsHeader = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerText}>Todos los shows</Text>
+      <Text style={styles.headerText}>Restaurantes y shows</Text>
     </View>
   );
 };
 
 // DEFINIMOS LOS ESTILOS
 const styles = StyleSheet.create({
+  
   // Bloque del encabezado
   header: {
     backgroundColor: '#EE2D43',
@@ -31,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AllShowsHeader;
+export default AllItemsHeader;
