@@ -55,16 +55,27 @@ desde la pantalla de listado.
 Este proyecto cuenta con 9 componentes: 
 
 - **AllRestaurants.js:** *Lista de todos los restaurantes, accede al contexto global de la aplicación para poder mostrar los datos necesarios.*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **AllRestaurantsHeader.js:**  *Encabezado utilizado en el componente anterior. Muestra el titulo de la ventana (Todos los restaurantes).*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
  - **AllShows.js:**  *Lista de todos los shows, accede al contexto global de la aplicación para poder mostrar los datos (Data.js) necesarios.*
+ - ----------------------------------------------------------------------------------------------------------------------------------------------
 - **AllShowsHeader.js:**  *Encabezado utilizado en el componente "AllShows.js". Muestra el titulo de la ventana (Todos los shows).*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **AllItems.js:** *Lista de todos los restaurantes + shows, accede al contexto global de la aplicación para poder mostrar los datos necesarios. Lo usamos únicamente al apretal la lupa en la barra de búsqueda*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **AllItemsHeader.js:**  *Encabezado utilizado en el componente "AllItems.js". Muestra el titulo de la ventana (Restaurantes y shows).*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **RestaurantCarousel.js:**  *Componente donde se crea el carrusel, el cual mostrará todas las imágenes con los respectivos nombres de cada restaurante debajo. También accede a los datos mediante el contexto.*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **ShowCarousel.js:**  *Componente donde se crea el carrusel, el cual mostrará todas las imágenes con los respectivos nombres de cada show debajo. También accede a los datos mediante el contexto.*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **RestaurantDetail.js:**  *Ventana encargada de mostrar los detalles de los restaurantes (Dirección, teléfono y horario)*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **ShowsDetail.js:**  *Ventana encargada de mostrar los detalles de los shows (Dirección, teléfono y horario).*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **Header.js:**  *Es el encabezado de la ventana principal de la aplicación (Home), contiene el nombre "GuiaRest.*
+- ----------------------------------------------------------------------------------------------------------------------------------------------
 - **Searchbar.js:**  *Componente que crea la barra de búsqueda. La misma cuenta con autocompletado y nos permite clickear la opción deseada y acceder a la ventana de detalles, ya sea de restaurantes o shows.*
 
 [React-native]: https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
