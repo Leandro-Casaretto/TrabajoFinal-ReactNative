@@ -38,10 +38,14 @@ desde la pantalla de listado.
    https://github.com/Leandro-Casaretto/TrabajoFinal-ReactNative.git
    ```
 2. Nos posicionamos en el directorio raíz
-4. Abrimos el directorio del proyecto en nuestro editor
+3. Instalamos las dependencias
+    ```bash
+   npm install
+   ```
+5. Abrimos el directorio del proyecto en nuestro editor
    >"code ." en caso de Visual Studio Code
 
-1. Para ejecutar el proyecto, en la consola ejecutamos el siguiente comando:
+6. Para ejecutar el proyecto, en la consola ejecutamos el siguiente comando:
    ```bash
    expo start
    ```
